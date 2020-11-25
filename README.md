@@ -10,6 +10,7 @@ For this you need python3 + 2 modules of python
 2 - requests
 
 in windows you can do it via pip-
+
 pip install trueskill
 pip install requests
 
