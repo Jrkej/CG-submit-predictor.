@@ -5,7 +5,9 @@ After ending of fall challenge i was thinking that how can the speed of submits 
 
 # Requirements
 For this you need python3 + 2 modules of python
+
 1 - trueskill
+
 2 - requests
 
 in windows you can do it via pip-
