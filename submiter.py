@@ -14,11 +14,11 @@ import trueskill
 import random
 import time
 #-----------------------------------------------------------------------------------------------------------
-bot_programming = "coders-strike-back"#Bot programming (pretty id)
-total_matches = 220 #Total matches to be played
+bot_programming = "a-code-of-ice-and-fire"#Bot programming (pretty id)
+total_matches = 180 #Total matches to be played
 
-email = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' #Enter your Codingame handle email-Id
-pw = '********************'#Enter your Codingame handle password don't worry its secure
+email = 'xxxxxxxxxxxxxxxxxxxxxxxxx@xxxxxxxx' #Enter your Codingame handle email-Id
+pw = '******************'#Enter your Codingame handle password don't worry its secure
 #-----------------------------------------------------------------------------------------------------------
 
 match_cooldown = 6#time in seconds to halt after each match
@@ -30,7 +30,7 @@ url5 = 'https://www.codingame.com/services/Puzzle/generateSessionFromPuzzlePrett
 url6 = 'https://www.codingame.com/services/user/logout'#logout
 
 sess = requests.Session()
-me = Rating(0, sigma = 10)
+me = Rating(0,sigma=10)
 user = "NOT LOGGED YET"
 handle = -1
 puzzle = -1
@@ -101,9 +101,9 @@ def update_my_rank():
 
 def get_random_opp_rank():
     total = total_players
-    rank = random.randrange(max(0,my_rank-(total//8)), min(total,my_rank+min(7,total//12)))
+    rank = random.randrange(max(0,my_rank-min(10,total//8)), min(total,my_rank+min(7,total//12)))
     while rank == my_rank:
-        rank = random.randrange(max(0,my_rank-(total//8)), min(total,my_rank+min(7,total//12)))
+        rank = random.randrange(max(0,my_rank-min(10,total//8)), min(total,my_rank+min(7,total//12)))
     return rank
 
 def play(json):
