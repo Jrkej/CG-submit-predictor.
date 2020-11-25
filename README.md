@@ -1,18 +1,16 @@
 # CG-submit-predictor.
 It will predict your rank in CG leaderboard if you submit your code saved in CG IDE.
 # Introduction
-After ending of fall challenge i was thinking that how can the speed of submits can be increased,So here is my one of idea.
+After ending of fall challenge i was thinking that how can the speed of submits can be increased,So here is my one of idea.<br/>
 
 # Requirements
-For this you need python3 + 2 modules of python
+For this you need python3 + 2 modules of python<br/>
+1 - trueskill<br/>
+2 - requests<br/>
 
-1 - trueskill
-2 - requests
-
-in windows you can do it via pip-
-
-pip install trueskill
-pip install requests
+in windows you can do it via pip-<br/>
+pip install trueskill<br/>
+pip install requests<br/>
 
 for other OS i am not aware of them but you are smart enough to install it.
 
