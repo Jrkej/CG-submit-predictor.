@@ -30,7 +30,7 @@ url5 = 'https://www.codingame.com/services/Puzzle/generateSessionFromPuzzlePrett
 url6 = 'https://www.codingame.com/services/user/logout'#logout
 
 sess = requests.Session()
-me = Rating(0)
+me = Rating(0, sigma = 10)
 user = "NOT LOGGED YET"
 handle = -1
 puzzle = -1
