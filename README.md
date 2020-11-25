@@ -1,7 +1,7 @@
 # CG-submit-predictor.
 It will predict your rank in CG leaderboard if you submit your code saved in CG IDE.
 # Introduction
-After ending of fall challenge i was thinking that how can the speed of submits can be increased,So here is my one of idea.<br/>
+After ending of fall challenge i was thinking that how can the speed of submits can be increased,So here is my idea.<br/>
 
 # Requirements
 For this you need python3 + 2 modules of python<br/>
@@ -19,7 +19,7 @@ for other OS i am not aware of them but you are smart enough to install it.
 `NOTE - IF YOU HAVE CHANGED YOUR CODE IN CG IDE SO YOU HAVE TO PLAY A MATCH TO SAVE THAT CODE ON CG.`
 
 # Running the code
-Download submission.py from this respitory - https://github.com/Jrkej/CG-submit-predictor./blob/main/submission.py<br/>
+Download submiter.py from this respitory - https://github.com/Jrkej/CG-submit-predictor./blob/main/submiter.py<br/>
 open it and enter your credentials in line 20 and 21-<br/>
 <br/>
 `email = 'xxxxxxxxxxxxxxxxxxxxxxxx' #Enter your Codingame handle email-Id`<br/>
