@@ -21,7 +21,7 @@ email = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' #Enter your Codingame handle email-Id
 pw = '********************'#Enter your Codingame handle password don't worry its secure
 #-----------------------------------------------------------------------------------------------------------
 
-match_cooldown = 5#time in seconds to halt after each match
+match_cooldown = 6#time in seconds to halt after each match
 url1 = 'https://www.codingame.com/services/TestSession/startTestSession'#start test session
 url2 = 'https://www.codingame.com/services/TestSession/play'#play a match
 url3 = 'https://www.codingame.com/services/CodingamerRemoteService/loginSiteV2'#logs in to the site
