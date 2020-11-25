@@ -11,8 +11,8 @@ For this you need python3 + 2 modules of python<br/>
 
 in windows you can do it via pip-<br/>
 <br/>
-pip install trueskill<br/>
-pip install requests<br/>
+`pip install trueskill`<br/>
+`pip install requests`<br/>
 
 for other OS i am not aware of them but you are smart enough to install it.
 
@@ -22,7 +22,7 @@ for other OS i am not aware of them but you are smart enough to install it.
 Download submission.py from this respitory - https://github.com/Jrkej/CG-submit-predictor./blob/main/submission.py<br/>
 open it and enter your credentials in line 20 and 21-<br/>
 <br/>
-`email = 'xxxxxxxxxxxxxxxxxxxxxxxx' #Enter your Codingame handle email-Id`
+`email = 'xxxxxxxxxxxxxxxxxxxxxxxx' #Enter your Codingame handle email-Id`<br/>
 `pw = '*******************'#Enter your Codingame handle password don't worry its secure`
 
 and then you have to enter pretty id of bot programming you have to predict your submission for on line 17 -<br/>
@@ -30,9 +30,11 @@ bot_programming = "x-y-z"#Bot programming (pretty id)<br/>
 pretty id is nothing just its made of small letters and spaces are replaced '-' so for 'Coders Strike Back' it will be 'coders-strike-back'<br/>
 <br/>
 Now comes amount of total matches to play, For a accurate result check how many battles does default submission plays on an average(like for 'Coders strike Back' legend league its nearly 220 battles per submit) and change number of battles on line 18th-<br/>
-`total_matches = X #Total matches to be played`
+<br/>
+`total_matches = X #Total matches to be played`<br/>
 <br/>
 Bingo everything is ready now you can Run the code, It will print data for each match in the form of -<br/>
+
 `match_number:opponent nickname:opponent rank:result(WON,LOSE,TIE):scores:your current rank:side:replay link`
 
 # Benefits
