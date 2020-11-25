@@ -5,10 +5,12 @@ After ending of fall challenge i was thinking that how can the speed of submits 
 
 # Requirements
 For this you need python3 + 2 modules of python<br/>
+<br/>
 1 - trueskill<br/>
 2 - requests<br/>
 
 in windows you can do it via pip-<br/>
+<br/>
 pip install trueskill<br/>
 pip install requests<br/>
 
@@ -17,11 +19,11 @@ for other OS i am not aware of them but you are smart enough to install it.
 # NOTE - IF YOU HAVE CHANGED YOUR CODE IN CG IDE SO YOU HAVE TO PLAY A MATCH TO SAVE THAT CODE ON CG.
 
 # Running the code
-Download submission.py from this respitory - https://github.com/Jrkej/CG-submit-predictor./blob/main/submission.py
-open it and enter your credentials in line 20 and 21-
-
-email = 'xxxxxxxxxxxxxxxxxxxxxxxx' #Enter your Codingame handle email-Id
-pw = '*******************'#Enter your Codingame handle password don't worry its secure
+Download submission.py from this respitory - https://github.com/Jrkej/CG-submit-predictor./blob/main/submission.py<br/>
+open it and enter your credentials in line 20 and 21-<br/>
+<br/>
+`email = 'xxxxxxxxxxxxxxxxxxxxxxxx' #Enter your Codingame handle email-Id`
+`pw = '*******************'#Enter your Codingame handle password don't worry its secure`
 
 and then you have to enter pretty id of bot programming you have to predict your submission for on line 17 -
 bot_programming = "x-y-z"#Bot programming (pretty id)
