@@ -1,7 +1,11 @@
 # CG-submit-predictor.
 It will predict your rank in CG leaderboard if you submit your code saved in CG IDE.
+
 # Introduction
 After ending of fall challenge i was thinking that how can the speed of submits can be increased,So here is my idea.<br/>
+
+# Why to use?
+-As we all are aware of randomness on CG submissions so if you wanna get an estimated rank for a new update in your bot without any submission on CG so that you can decide that should i submit it on CG or not and if my new bot is better than the bot currently submitted on CG you can use this tool.
 
 # Requirements
 For this you need python3 + 2 modules of python<br/>
@@ -43,6 +47,10 @@ Bingo everything is ready now you can Run the code, It will print data for each 
 -It can reduce the amount of submits if this becomes familiar with every codingamer.<br/>
 -No Bot verification Captchas on many spam submits unlike CodinGame ;)<br/>
 -It gives you an good estimate of rank of your bot in IDE cause it uses 'TRUESKILL' which is used by CG as well for submission.<br/>
+
+# HOW AND WHY IT WORKS?
+-This works cause of trueskill which is also used by CG for evaluating of submits.<br/>
+-When you run the 'submiter.py' it takes data of people of your league(max 1000 people) and then it sets your points 0 and after that it plays a match with random player which is near your rank(rank decided by points) and then the result of match is provided to trueskill which updates your points and then it updates your rank
 
 # Limitations
 
