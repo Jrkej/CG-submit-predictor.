@@ -4,6 +4,11 @@ It will predict your rank in CG leaderboard if you submit your code saved in CG 
 # Introduction
 After ending of fall challenge i was thinking that how can the speed of submits can be increased,So here is my idea.<br/>
 
+# What does it do?
+-It provides you an estimated rank for your code in IDE on CG for any bot programming without making any submission for that on CG so that you can decided that should i submit your code on CG or not(will be available for contest later).<br/>
+-It can be used to try something new in bot.<br/>
+-battles can be faster on CG cause cause there will be less submissions on CG.
+
 # Why to use?
 -As we all are aware of randomness on CG submissions so if you wanna get an estimated rank for a new update in your bot without any submission on CG so that you can decide that should i submit it on CG or not and if my new bot is better than the bot currently submitted on CG you can use this tool.
 
