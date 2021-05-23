@@ -2,8 +2,8 @@
 #           setup            #
 # 1 - pip install trueskill  #
 # 2 - pip install requests   #
-# 3 - enter data -           #
-#     email,pw,etc.          #
+# 3 - enter data - email,pw, #
+#     bot_programming, total #
 # 4 - Run the code and       #
 #     experience the magic.  #
 #                   -by jrke #
@@ -14,14 +14,15 @@ import trueskill
 import random
 import time
 #-----------------------------------------------------------------------------------------------------------
-bot_programming = "a-code-of-ice-and-fire"#Bot programming (pretty id)
-total_matches = 180 #Total matches to be played
+bot_programming = "spring-challenge-2021"#Bot programming (pretty id)
+total_matches = 120 #Total matches to be played
 
 email = 'xxxxxxxxxxxxxxxxxxxxxxxxx@xxxxxxxx' #Enter your Codingame handle email-Id
 pw = '******************'#Enter your Codingame handle password don't worry its secure
 #-----------------------------------------------------------------------------------------------------------
 
 match_cooldown = 6#time in seconds to halt after each match
+limit_cooldown = 300#time in seconds to halt if reached the limit of plays for a period of time.
 url1 = 'https://www.codingame.com/services/TestSession/startTestSession'#start test session
 url2 = 'https://www.codingame.com/services/TestSession/play'#play a match
 url3 = 'https://www.codingame.com/services/CodingamerRemoteService/loginSiteV2'#logs in to the site
@@ -54,7 +55,7 @@ def logout():
 
 def generate_session():
     global handle
-    handle = sess.post(url5,json = [user['success']['codinGamer']['userId'], bot_programming, False]).json()['handle']
+    handle = sess.post(url5,json = [user['codinGamer']['userId'], bot_programming, False]).json()['handle']
 
 def startTestSession():
     global puzzle
@@ -71,7 +72,7 @@ def collect_data():
 def collect_players():
     global leaderboard
     global total_players
-    json = [{'divisionId':divid, 'roomIndex':0}, user['success']['codinGamer']['publicHandle']]
+    json = [{'divisionId':divid, 'roomIndex':0}, user['codinGamer']['publicHandle']]
     leaderboard = sess.post(url4, json = json).json()['users']
     total_players = len(leaderboard)
     player = []
@@ -84,7 +85,7 @@ def collect_players():
 def create_trueskill():
     global trueskill_leaderboard
     for player in leaderboard:
-        if player['pseudo'] != user['success']['codinGamer']['pseudo']:
+        if player['pseudo'] != user['codinGamer']['pseudo']:
             p = {"name":player['pseudo'], 'skill':Rating(mu = player['score'], sigma = .8), 'id':player['agentId']}
             trueskill_leaderboard.append(p)
     p = {'name':'me', 'skill':me, 'id':-1}
@@ -116,16 +117,24 @@ def run_submission():
     for match in range(total_matches):
         opp_rank = get_random_opp_rank()
         player = trueskill_leaderboard[opp_rank]
-        side = random.choice([0,1])
-        agents = [0,1]
+        side = random.randrange(start=0, stop=10)%2
+        agents = [0, 1]
         agents[side] = trueskill_leaderboard[my_rank]['id']
-        agents[1-side] = trueskill_leaderboard[opp_rank]['id']
+        agents[1 - side] = trueskill_leaderboard[opp_rank]['id']
         json = [handle,{"code":f"{code}", "programmingLanguageId":f"{language}","multi":{"agentsIds":agents,"gameOptions":None}}]
         data = play(json)
         try:
             scores = data['scores']
         except:
-            print(data)
+            try:
+                if data['message'] == 'You reached the limit of plays for a period of time.':
+                    print("Reached the limit of plays for a period of time. So, taking a halt!")
+                    time.sleep(limit_cooldown)
+                    match -= 1
+                    continue
+            except:
+                print(data)
+
         if scores[side] > scores[1-side]:
             result = "WON"
             win += 1
