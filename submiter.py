@@ -3,7 +3,7 @@
 # 1 - pip install trueskill  #
 # 2 - pip install requests   #
 # 3 - enter data - email,pw, #
-#     bot_programming, total #
+#     bot_programming, etc.  #
 # 4 - Run the code and       #
 #     experience the magic.  #
 #                   -by jrke #
