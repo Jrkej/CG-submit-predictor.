@@ -111,10 +111,10 @@ def play(json):
     return sess.post('https://www.codingame.com/services/TestSession/play', json = json).json()
 
 def run_submission():
-    lose = win = tie = 0
+    lose = win = tie = skip = 0
     global my_rank
     print("S.no : Opponent name : Opponent rank : result : scores : your current rank : side : replay")
-    for match in range(total_matches):
+    for match in range(total_matches+skip):
         opp_rank = get_random_opp_rank()
         player = trueskill_leaderboard[opp_rank]
         side = random.randrange(start=0, stop=10)%2
@@ -130,7 +130,8 @@ def run_submission():
                 if data['message'] == 'You reached the limit of plays for a period of time.':
                     print("Reached the limit of plays for a period of time. So, taking a halt!")
                     time.sleep(limit_cooldown)
-                    match -= 1
+                    print("Re-Starting matches...")
+                    skip += 1
                     continue
             except:
                 print(data)
@@ -149,7 +150,7 @@ def run_submission():
             trueskill_leaderboard[my_rank]['skill'],trueskill_leaderboard[opp_rank]['skill'] = rate_1vs1(trueskill_leaderboard[my_rank]['skill'],trueskill_leaderboard[opp_rank]['skill'],drawn = True)
         update_my_rank()
         sides = ['Left', 'Right']
-        print(f"{match+1} : {player['name']} : {opp_rank+1} : {result} : {data['scores']} : {my_rank+1} : {sides[side]}, - https://www.codingame.com/share-replay/{data['gameId']}")
+        print(f"{match+1-skip} : {player['name']} : {opp_rank+1} : {result} : {data['scores']} : {my_rank+1} : {sides[side]}, - https://www.codingame.com/share-replay/{data['gameId']}")
         time.sleep(match_cooldown)
     print("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
     print("WINS  :  TIES  :  LOSES")
