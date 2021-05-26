@@ -65,7 +65,6 @@ Bingo everything is ready now you can Run the code, It will print data for each 
 # Exceptions
 
 -This tool brokes for platinum rift episode 1 and episode 2 also i will fix it if i got the problem.<br/>
--In case you decreased match_cooldown time in seconds on line 24th in submiter.py it can cause error in middle of running code it will say that many battles have been played in very less time,Due to CG.<br/>
 
 # Further additions
 Later i will make this tool available for contest as well cause we faced slow submits in contest.<br/>
